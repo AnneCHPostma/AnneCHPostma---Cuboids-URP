@@ -80,10 +80,11 @@ Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
 
-# Visual Studio Code
+# Visual Studio (Code)
 .vscode/*
 .sln
 .csproj
+.vsconfig
 *.code-workspace
 
 # Local History for Visual Studio Code
