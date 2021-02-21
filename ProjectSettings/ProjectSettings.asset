@@ -127,7 +127,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 2021.2.20
+  bundleVersion: 2021.2.21
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -148,7 +148,7 @@ PlayerSettings:
   applicationIdentifier:
     Standalone: com.AnneCHPostma.Cuboids
   buildNumber:
-    Standalone: 1232
+    Standalone: 1212
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1

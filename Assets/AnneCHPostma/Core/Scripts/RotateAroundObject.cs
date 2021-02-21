@@ -4,9 +4,9 @@ namespace AnneCHPostma.Core
 {
     public class RotateAroundObject : MonoBehaviour
     {
-        [Tooltip("GameObject to rotate around")]
+        [Tooltip("Add a GameObject to rotate around")]
         [SerializeField]
-        private GameObject _gameObject = default;
+        private GameObject _gameObject = null;
 
         [Tooltip("The rotation speed in angle degrees per second")]
         [SerializeField]
@@ -20,7 +20,8 @@ namespace AnneCHPostma.Core
         {
             if (_gameObject == null)
             {
-                Debug.LogError("No GameObject is attached to the RotateAroundObject script!");
+                Debug.LogError("No GameObject is attached to the RotateAroundObject script.");
+
                 return;
             }
 

@@ -7,9 +7,9 @@ namespace AnneCHPostma.Cuboids
     [RequireComponent(typeof(GameObject))]
     public class UpdateFPSCounter : MonoBehaviour
     {
-        [Tooltip("Attach the GameObject that is updating the FPS counter")]
+        [Tooltip("Add the GameObject that is updating the FPS counter")]
         [SerializeField]
-        private GameObject _fpsCounter = default;
+        private GameObject _fpsCounter = null;
 
         private TextMeshProUGUI fpsCounter = null;
 
@@ -41,7 +41,7 @@ namespace AnneCHPostma.Cuboids
         /// Start a Coroutine after x seconds.
         /// </summary>
         /// <param name="coroutine">The Coroutine to be invoked.</param>
-        /// <param name="seconds">The amount of time before invoke the Coroutine.</param>
+        /// <param name="seconds">The amount of time before invoking the Coroutine.</param>
         IEnumerator DelayCoroutine(IEnumerator coroutine, float seconds)
         {
             yield return new WaitForSeconds(seconds);
@@ -52,7 +52,7 @@ namespace AnneCHPostma.Cuboids
         /// Update the framesPerSecond variable.
         /// Based on code from https://gist.github.com/mstevenson/5103365
         /// </summary>
-        /// <param name="updateDelay">The time to delay the update (in seconds). Default is a 1 second delay.</param>
+        /// <param name="updateDelay">The time to delay the update (in seconds). By default it is a one second delay.</param>
         IEnumerator UpdateFramesPerSecond(float updateDelay = 1.0f)
         {
             while (true)

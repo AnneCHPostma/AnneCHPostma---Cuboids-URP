@@ -4,12 +4,12 @@ namespace PERCEPT10N.Cuboids
 {
     public class CuboidsSpawner : MonoBehaviour
     {
-        [Tooltip("")]
+        [Tooltip("The refesh time used to spawn and remove the cuboids")]
         [SerializeField]
         [Min(0.01f)]
         private float _refreshTime = 0.11f;
 
-        [Tooltip("The chance that colored blocks will appear in percentage.")]
+        [Tooltip("The chance that colored cuboids will appear (percentage)")]
         [SerializeField]
         [Range(0, 100)]
         private int _chancePercentage = 22;
@@ -36,16 +36,14 @@ namespace PERCEPT10N.Cuboids
         void Start()
         {
             InvokeRepeating(nameof(CreateRandomCuboid), 1.0f, _refreshTime);
-            InvokeRepeating(nameof(CleanCuboids), _refreshTime * 100, _refreshTime * 100);
+            InvokeRepeating(nameof(RemoveCuboids), _refreshTime * 100, _refreshTime * 100);
         }
 
         private void CreateRandomCuboid()
         {
             var cuboid = GameObject.CreatePrimitive(PrimitiveType.Cube);
             var cuboidRenderer = cuboid.GetComponent<Renderer>();
-
             var cuboidColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
-
             var cuboidPosition = new Vector3(Random.Range(minX, maxX), Random.Range(50.0f, 250.0f), Random.Range(minZ, maxZ));
             var cuboidScale = new Vector3(Random.Range(0.1f, 1.5f), Random.Range(0.1f, 1.5f), Random.Range(0.1f, 1.5f));
             var cuboidRotation = new Vector3(Random.Range(0.0f, 360.0f), Random.Range(0.0f, 360.0f), Random.Range(0.0f, 360.0f));
@@ -68,13 +66,14 @@ namespace PERCEPT10N.Cuboids
 
                 cuboidMaterial.SetColor("_BaseColor", cuboidColor);
                 cuboidMaterial.SetColor("_EmissionColor", cuboidColor);
+
                 cuboidRenderer.material = cuboidMaterial;
             }
 
             cuboidsCounter++;
         }
 
-        private void CleanCuboids()
+        private void RemoveCuboids()
         {
             var cuboids = GameObject.FindGameObjectsWithTag("Cuboid");
 

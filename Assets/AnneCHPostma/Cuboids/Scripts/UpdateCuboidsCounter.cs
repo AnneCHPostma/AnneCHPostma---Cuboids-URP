@@ -7,13 +7,13 @@ namespace AnneCHPostma.Cuboids
     [RequireComponent(typeof(GameObject))]
     public class UpdateCuboidsCounter : MonoBehaviour
     {
-        [Tooltip("Attach the GameObject that is spawning the cuboids")]
+        [Tooltip("Add the GameObject that is spawning the cuboids")]
         [SerializeField]
-        private GameObject _cuboidsSpawner = default;
+        private GameObject _cuboidsSpawner = null;
 
-        [Tooltip("Attach the GameObject that is updating the cuboids counter")]
+        [Tooltip("Add the GameObject that is updating the cuboids counter")]
         [SerializeField]
-        private GameObject _cuboidsCounter = default;
+        private GameObject _cuboidsCounter = null;
 
         private CuboidsSpawner cuboidsSpawner = null;
         private TextMeshProUGUI cuboidsCounter = null;
