@@ -148,7 +148,7 @@ PlayerSettings:
   applicationIdentifier:
     Standalone: com.AnneCHPostma.Cuboids
   buildNumber:
-    Standalone: 1700
+    Standalone: 1727
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
